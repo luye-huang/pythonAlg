@@ -12,8 +12,8 @@ class Solution:
         ret = [0] * len(hits)
 
         def isConnected(i, j) -> bool:
-            return i == 0 or any([0 <= y < h and 0 <= x < w and grid[y][x] == 2 for y, x in
-                                  [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]])
+            return i == 0 or any(0 <= y < h and 0 <= x < w and grid[y][x] == 2 for y, x in
+                                  [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)])
 
         def dfs(i, j) -> int:
             if not (0 <= i < h and 0 <= j < w) or grid[i][j] != 1:
